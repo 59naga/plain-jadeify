@@ -1,0 +1,44 @@
+{
+  "name": "plain-jadeify",
+  "version": "0.0.0",
+  "description": "browserify transform `.jade` to plain HTML",
+
+  "main": "lib",
+  "scripts": {
+    "prepublish": "node -e \"if(process.env.TRAVIS){}else{process.exit(1)}\" && npm run compile || echo skip prepublish",
+    "compile": "coffee --output lib --bare --compile src",
+    
+    "start": "jasminetea --file index.coffee --watch",
+    "test": "jasminetea --file index.coffee --lint --cover --report"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm test"
+    }
+  },
+
+  "dependencies": {
+    "jade": "^1.11.0",
+    "through2": "^2.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^11.2.0",
+    "ghooks": "^0.3.2",
+    "jasminetea": "^0.2.1"
+  },
+  
+  "keywords": [
+    "browserify",
+    "jade"
+  ],
+  "author": "59naga <i59naga@icloud.com> (http://berabou.me)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/59naga/plain-jadeify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/59naga/plain-jadeify/issues"
+  },
+  "homepage": "https://github.com/59naga/plain-jadeify#readme"
+}
