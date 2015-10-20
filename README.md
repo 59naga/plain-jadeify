@@ -13,8 +13,6 @@ $ npm install plain-jadeify --global
 
 # CLI
 
-## plainJadeify -> transformer
-
 [jadeify](https://github.com/domenic/jadeify) returns the __function__. But `plain-jadeify` returns a __string__.
 
 `src/index.js`
