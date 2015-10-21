@@ -44,12 +44,13 @@ node bundle.js
 `options` to pass to [jade.render](http://jade-lang.com/api/)
 
 ```js
-var Browserify= require('browserify');
-var plainJadeify= require('./index.js');
+var browserify= require('browserify');
+var plainJadeify= require('plain-jadeify');
 var fs= require('fs');
 
-browserify= Browserify('./test/fixtures/index.js')
-browserify.transform(plainJadeify({pretty:true}))
+browserify('./index.js',{
+  transform: plainJadeify({pretty:true}),
+})
 .bundle()
 .pipe(fs.createWriteStream('bundle.js'),'utf8');
 
