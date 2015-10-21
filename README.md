@@ -29,6 +29,8 @@ body(ui-view)
   string of jade
 ```
 
+Ta-dah.
+
 ```bash
 browserify src -t plain-jadeify > bundle.js
 node bundle.js
