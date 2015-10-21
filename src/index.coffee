@@ -28,7 +28,7 @@ plainJadeify= (file,...,options)->
 
       next()
 
-  unless file?
+  unless typeof file is 'string'
     return transformer # wait for the browserify.bundle
 
   else
