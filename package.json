@@ -1,6 +1,6 @@
 {
   "name": "plain-jadeify",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "browserify transform `.jade` to plain HTML",
 
   "main": "lib",

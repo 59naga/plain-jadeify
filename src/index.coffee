@@ -3,8 +3,10 @@ through2= require 'through2'
 jade= require 'jade'
 
 # Public
-plainJadeify= (options={})->
-  (file)->
+plainJadeify= (file,...,options)->
+  options?= {}
+
+  transformer= (file)->
     isJade= file.slice(-5) is '.jade'
 
     data= ''
@@ -25,5 +27,11 @@ plainJadeify= (options={})->
       @push "module.exports=#{safeHTML};"
 
       next()
+
+  unless file?
+    return transformer # wait for the browserify.bundle
+
+  else
+    return transformer file # right now
 
 module.exports= plainJadeify
